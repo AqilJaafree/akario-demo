@@ -2,7 +2,9 @@ import React from "react";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blogs from "./pages/Blogs";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, Router } from "react-router-dom";
+import Details from "./Details";
+
 
 export default function NavBar() {
   return (
@@ -24,5 +26,21 @@ export default function NavBar() {
       </ul>
     </nav>
   );
+   return (
+    <Router>
+      <div>
+        
+        <Routes>
+          <Route path="/Blogs" element={<Blogs />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
+        <div className="App">
+          {/* Your existing content in App.js */}
+        </div>
+      </div>
+    </Router>
+  );
 }
+
 
